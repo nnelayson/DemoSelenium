@@ -25,4 +25,15 @@ public class BasePage {
     protected void click(By locator){
         find(locator).click();
     }
+
+    public static void delay(int miliseconds) {
+        try {
+            Thread.sleep(miliseconds * 1000);
+        } catch (InterruptedException exc) {
+            exc.printStackTrace();
+
+        }
+    }
 }
+
+
