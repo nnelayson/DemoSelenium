@@ -1,4 +1,4 @@
-package com.seleniumdemo;
+package com.base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +28,7 @@ public class BasePage {
 
     public static void delay(int miliseconds) {
         try {
-            Thread.sleep(miliseconds * 1000);
+            Thread.sleep(miliseconds);
         } catch (InterruptedException exc) {
             exc.printStackTrace();
 

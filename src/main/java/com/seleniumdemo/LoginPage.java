@@ -1,6 +1,8 @@
 package com.seleniumdemo;
 import org.openqa.selenium.By;
 
+import com.base.BasePage;
+
  
 
 public class LoginPage extends BasePage {
