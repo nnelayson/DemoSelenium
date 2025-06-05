@@ -5,7 +5,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import com.seleniumdemo.BasePage;
+import com.base.BasePage;
 import com.seleniumdemo.LoginPage;
 
 
