@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: part2.test.Products.ProductsTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.918 s -- in part2.test.Products.ProductsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.476 s -- in part2.test.Products.ProductsTest

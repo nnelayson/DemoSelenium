@@ -2,28 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-05T16:00:34 PST" name="Surefire suite" finished-at="2025-06-05T16:00:49 PST" duration-ms="14933">
+  <suite started-at="2025-06-09T16:33:04 PST" name="Surefire suite" finished-at="2025-06-09T16:33:11 PST" duration-ms="7028">
     <groups>
     </groups>
-    <test started-at="2025-06-05T16:00:34 PST" name="Surefire test" finished-at="2025-06-05T16:00:49 PST" duration-ms="14933">
-      <class name="part3_4.com.demoqa.tests.part3.elements.WebTableTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:part3_4.com.demoqa.tests.part3.elements.WebTableTest@140e5a13]" started-at="2025-06-05T16:00:34 PST" name="setUp" finished-at="2025-06-05T16:00:39 PST" duration-ms="4286" status="PASS">
+    <test started-at="2025-06-09T16:33:04 PST" name="Surefire test" finished-at="2025-06-09T16:33:11 PST" duration-ms="7028">
+      <class name="part2.test.Products.ProductsTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:part2.test.Products.ProductsTest@3b2c72c2]" started-at="2025-06-09T16:33:04 PST" name="setUp" finished-at="2025-06-09T16:33:09 PST" duration-ms="5194" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="loadApplication()[pri:0, instance:part3_4.com.demoqa.tests.part3.elements.WebTableTest@140e5a13]" started-at="2025-06-05T16:00:39 PST" name="loadApplication" finished-at="2025-06-05T16:00:43 PST" duration-ms="4731" status="PASS">
+        <test-method signature="testProductsHeaderIsDisplayed()[pri:0, instance:part2.test.Products.ProductsTest@3b2c72c2]" started-at="2025-06-09T16:33:09 PST" name="testProductsHeaderIsDisplayed" finished-at="2025-06-09T16:33:09 PST" duration-ms="291" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loadApplication -->
-        <test-method signature="testWebTable()[pri:0, instance:part3_4.com.demoqa.tests.part3.elements.WebTableTest@140e5a13]" started-at="2025-06-05T16:00:43 PST" name="testWebTable" finished-at="2025-06-05T16:00:45 PST" duration-ms="1107" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testWebTable -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:part3_4.com.demoqa.tests.part3.elements.WebTableTest@140e5a13]" started-at="2025-06-05T16:00:45 PST" name="tearDown" finished-at="2025-06-05T16:00:49 PST" duration-ms="4774" status="PASS">
+        </test-method> <!-- testProductsHeaderIsDisplayed -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:part2.test.Products.ProductsTest@3b2c72c2]" started-at="2025-06-09T16:33:09 PST" name="tearDown" finished-at="2025-06-09T16:33:11 PST" duration-ms="1517" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- part3_4.com.demoqa.tests.part3.elements.WebTableTest -->
+      </class> <!-- part2.test.Products.ProductsTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

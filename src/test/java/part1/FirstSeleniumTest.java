@@ -1,9 +1,13 @@
 package part1;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,63 +18,43 @@ public class FirstSeleniumTest {
 
     @BeforeClass
     public void setUp() {
-        // Set the path to EdgeDriver
-        System.setProperty("webdriver.edge.driver", "C:\\Users\\jayson\\FirstDemo\\main\\drivers\\msedgedriver.exe");
-
-        driver = new EdgeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Optional but helpful
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
     @AfterClass
     public void tearDown() {
-      //  driver.quit();
-        
-        }
-    
+        driver.quit(); // Proper cleanup
+    }
 
     @Test
-   public void testLoggingIntoApplication() throws InterruptedException {
-    Thread.sleep(2000);
-    WebElement username = driver.findElement(By.name("username"));
-    username.sendKeys("Admin");
+    public void testLoggingIntoApplication() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-    var password = driver.findElement(By.name("password"));
-    password.sendKeys("admin123");
+        WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
+        username.sendKeys("Admin");
 
-    driver.findElement(By.tagName("button")).click();
-    Thread.sleep(2000);
-    String actualResult = driver.findElement(By.tagName("h6")).getText();
-    String expectedResult = "Dashboard";
-    Assert.assertEquals(actualResult, expectedResult);
+        WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("admin123");
 
-    // Click the user dropdown/profile icon
-WebElement profileIcon = driver.findElement(By.cssSelector("p.oxd-userdropdown-name"));
-profileIcon.click();
-Thread.sleep(1000); // Small wait to let dropdown appear
+        driver.findElement(By.tagName("button")).click();
 
-// Now locate and click the logout link
-WebElement logoutButton = driver.findElement(By.xpath("//a[text()='Logout']"));
-Assert.assertTrue(logoutButton.isDisplayed(), "Logout button is not displayed after login");
-logoutButton.click();
-Thread.sleep(2000);
+        WebElement dashboardHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h6")));
+        Assert.assertEquals(dashboardHeader.getText(), "Dashboard");
 
-// Verify that the user is logged out by checking the login page title or URL
-    String currentUrl = driver.getCurrentUrl();
-    Assert.assertTrue(currentUrl.contains("auth/login"), "User is not logged out, still on the dashboard page.");
-    String pageTitle = driver.getTitle();
-    Assert.assertEquals(pageTitle, "OrangeHRM", "Page title is not as expected after logout.");
-    Assert.assertTrue(driver.findElement(By.name("username")).isDisplayed(), "Username field is not displayed after logout.");
-    Assert.assertTrue(driver.findElement(By.name("password")).isDisplayed(), "Password field is not displayed after logout.");
-    System.out.println("User logged out successfully and redirected to the login page.");       
+        WebElement profileIcon = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("p.oxd-userdropdown-name")));
+        profileIcon.click();
 
-        
+        WebElement logoutButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Logout']")));
+        Assert.assertTrue(logoutButton.isDisplayed(), "Logout button is not displayed after login");
+        logoutButton.click();
 
-    
+        wait.until(ExpectedConditions.urlContains("auth/login"));
 
-    
-
-
+        Assert.assertTrue(driver.findElement(By.name("username")).isDisplayed(), "Username field is not displayed after logout.");
+        Assert.assertTrue(driver.findElement(By.name("password")).isDisplayed(), "Password field is not displayed after logout.");
+        System.out.println("User logged out successfully and redirected to the login page.");
     }
 }
-
