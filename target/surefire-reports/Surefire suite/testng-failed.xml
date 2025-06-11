@@ -3,14 +3,13 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="part3_4.com.demoqa.tests.part3.forms.RadioButtonTest">
+      <class name="part1.FirstSeleniumTest">
         <methods>
           <include name="tearDown"/>
+          <include name="testLoggingIntoApplication"/>
           <include name="setUp"/>
-          <include name="loadApplication"/>
-          <include name="testRadioButton"/>
         </methods>
-      </class> <!-- part3_4.com.demoqa.tests.part3.forms.RadioButtonTest -->
+      </class> <!-- part1.FirstSeleniumTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->
